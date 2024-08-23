@@ -1,12 +1,33 @@
 "use client"
 import LinkForm from "@/components/form";
+import axios from "axios";
 
 
 export default function Home() {
 
-  const handleLinkShorten = (link: string): string => {
+  const handleLinkShorten = async (link: string): Promise<string  | null> => {
     // Simulate the link shortening process (replace with your logic)
-    return `https://short.ly/${btoa(link).slice(0, 8)}`;
+   try{
+    const response = await axios.post(
+      'https://api-ssl.bitly.com/v4/shorten',
+      {
+        long_url: link,
+        domain: 'bit.ly',
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_BITLY_ACCESS_TOKEN}`,
+          'Content-Type' : 'application/json',
+        },
+      }
+    );
+
+    return response.data.link;
+    } catch (error) {
+    console.error('Error shortening the link:', error);
+    return null;
+    }
+
   };
 
   return (

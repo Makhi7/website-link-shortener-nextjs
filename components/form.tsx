@@ -1,19 +1,22 @@
 import {  useState } from "react"
 
 interface LinkShortnerFormProps {
-    onShorten: (link: string) => string; // Fuction to shorten link
+    onShorten: (link: string) => Promise<string | null>; // Fuction to shorten link
 }
 
 export default function LinkForm(onShorten:LinkShortnerFormProps) 
 {
     const [link, setLink] = useState("");
     const [shortenedLink, setShortenedLink] = useState<string | null>(null);
+    const [loading, setLoading] = useState(false);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if(link) {
-            const newShortenedLink = onShorten.onShorten(link);
+            setLoading(true);
+            const newShortenedLink = await onShorten.onShorten(link);
             setShortenedLink(newShortenedLink);
+            setLoading(false);
         }
     }
 
@@ -38,8 +41,9 @@ export default function LinkForm(onShorten:LinkShortnerFormProps)
                 <button
                     type="submit"
                     className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    disabled={loading}
                 >
-                    Shorten Link
+                    {loading? 'Shortening...' : 'Create Shortened Link'}
                 </button>
             </form>
 
