@@ -6,7 +6,7 @@ import axios from "axios";
 export default function Home() {
 
   const handleLinkShorten = async (link: string): Promise<string  | null> => {
-    // Simulate the link shortening process (replace with your logic)
+    
    try{
     const response = await axios.post(
       'https://api-ssl.bitly.com/v4/shorten',
