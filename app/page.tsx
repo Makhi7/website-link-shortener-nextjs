@@ -34,7 +34,7 @@ export default function Home() {
     <div box-content mx-8 w-full>
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
         <div className="p-6 bg-white rounded-md shadow-md">
-          <h1 className="text-2xl font-bold mb-4">
+          <h1 className="text-2xl font-bold mb-2">
             Link shortener
           </h1>
           <LinkForm onShorten={handleLinkShorten} />

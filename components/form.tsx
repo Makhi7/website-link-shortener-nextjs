@@ -1,7 +1,7 @@
 import {  useState } from "react"
 
 interface LinkShortnerFormProps {
-    onShorten: (link: string) => Promise<string | null>; // Fuction to shorten link
+    onShorten: (link: string) => Promise<string | null>; // Function to shorten link
 }
 
 export default function LinkForm(onShorten:LinkShortnerFormProps) 
@@ -49,7 +49,7 @@ export default function LinkForm(onShorten:LinkShortnerFormProps)
 
             {shortenedLink && (
                 <div className="flex flex-col space-y-2">
-                    <div className="p-2 border border-gray-300 rounded-md">
+                    <div className="p-2 mt-2 border border-gray-300 rounded-md">
                         {shortenedLink}
                     </div>
                     <button
