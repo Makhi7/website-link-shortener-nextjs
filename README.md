@@ -56,9 +56,3 @@ To run the application locally:
 
 ```bash
 npm run dev
-
-
-
-
-
-
