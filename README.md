@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Website link(URL) shortner
+
+This is a simple link shortener application built with Next.js, TypeScript, and Tailwind CSS. It utilizes the Bitly API to shorten URLs, allowing users to input a link, shorten it, and then copy the shortened link.
+
+## Features
+
+- **Link Shortening:** Users can input a URL and generate a shortened link using the Bitly API.
+- **Copy to Clipboard:** The shortened link can be easily copied to the clipboard.
+
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+Before you begin, ensure you have the following installed on your local machine:
+
+- **Node.js** (latest version)
+- **npm** (latest version)
+
+
+### Installation
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone git@github.com:Makhi7/website-link-shortener-nextjs.git
+    cd nextjs-link-shortener
+    ```
+
+2. **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3. **Set up the Bitly API:**
+
+   - Sign in to your [Bitly account](https://bitly.com/) and generate an access token.
+   - Create a `.env.local` file in the root directory of the project:
+
+     ```bash
+     touch .env.local
+     ```
+
+   - Add your Bitly access token to the `.env.local` file:
+
+     ```env
+     NEXT_PUBLIC_BITLY_ACCESS_TOKEN=your_bitly_access_token
+     ```
+
+     Replace `your_bitly_access_token` with your actual Bitly access token.
+
+### Running the Application
+
+To run the application locally:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
