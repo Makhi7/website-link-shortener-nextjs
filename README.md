@@ -7,6 +7,11 @@ This is a simple link shortener application built with Next.js, TypeScript, and 
 - **Link Shortening:** Users can input a URL and generate a shortened link using the Bitly API.
 - **Copy to Clipboard:** The shortened link can be easily copied to the clipboard.
 
+## Known Issues
+
+- Need to write code to refresh the form after the link has been generated and copied by user.
+- No written tests.
+
 
 ## Getting Started
 
@@ -56,3 +61,4 @@ To run the application locally:
 
 ```bash
 npm run dev
+
